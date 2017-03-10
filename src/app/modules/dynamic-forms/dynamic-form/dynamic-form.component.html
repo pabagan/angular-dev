@@ -1,0 +1,12 @@
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+    <div *ngFor="let field of fields" class="row">
+        <app-dynamic-field [form]="formGroup"
+            [field]="field"></app-dynamic-field>
+    </div>
+
+    <div class="row">
+        <button type="submit" [disabled]="!formGroup.valid">Save</button>
+    </div>
+</form>
+
+<pre *ngIf="payload">{{ payload }}</pre>

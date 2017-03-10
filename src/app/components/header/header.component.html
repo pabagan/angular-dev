@@ -1,0 +1,12 @@
+<header *ngIf="showHeader">
+  <nav class="p-2 navbar-inverse fixed-top bg-inverse">
+    <div class="d-flex justify-content-end bd-highlight">
+      <div class="mr-auto p-2">
+        <a id="app-brand" class="navbar-brand" href="#">{{ appName }}</a>
+      </div>
+      <div class="p-2">
+        <button (click)="logout()" class="btn btn-primary" id="app-logout" type="submit">Logout</button>
+      </div>
+    </div>
+  </nav>
+</header>

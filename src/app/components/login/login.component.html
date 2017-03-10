@@ -1,0 +1,24 @@
+<div class="container">
+  <form (ngSubmit)="login(data)" #loginForm="ngForm" class="form-signin">
+    <div *ngIf="message" class="alert alert-danger" role="alert">
+      {{message}}
+    </div>  
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="name" class="sr-only">Username</label>
+    <input [(ngModel)]="data.name" type="text" id="name" name="name" class="form-control" placeholder="User name" required autofocus>
+    
+    <label for="password" class="sr-only">Password</label>
+    <input [(ngModel)]="data.password"  type="password" id="password" class="form-control" name="pass" placeholder="Password" required>
+    
+    <div class="checkbox">
+      <label for="remember">
+        <input type="checkbox" [(ngModel)]="data.remember" id="remember" name="remember" value="remember"> Remember me
+      </label>
+    </div>
+    
+    <button [disabled]="!loginForm.form.valid" class="btn btn-lg btn-primary btn-block" type="submit">
+      Sign in
+    </button>
+    
+  </form>
+</div> <!-- /container -->

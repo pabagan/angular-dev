@@ -1,0 +1,28 @@
+<div class="field" [formGroup]="form" [ngSwitch]="field.controlType">
+    <label [attr.for]="field.id">{{ field.label }}</label>
+
+    <input class="control" [id]="field.id" [type]="field.type"
+        *ngSwitchCase="'text'" [formControlName]="field.id">
+
+    <select class="control" [id]="field.id"
+        *ngSwitchCase="'select'" [formControlName]="field.id">
+        <option [value]="answer.value" *ngFor="let answer of field.options">
+            {{ answer.label }}
+        </option>
+    </select>
+
+    <textarea class="control" [id]="field.id"
+        *ngSwitchCase="'textarea'" [formControlName]="field.id"></textarea>
+
+    <div class="radio-group" *ngSwitchCase="'radio'">
+        <span class="radio" *ngFor="let answer of field.options">
+            <input type="radio" [id]="field.id + answer.value" [value]="answer.value"
+                [formControlName]="field.id">
+            <label [attr.for]="field.id + answer.value">{{ answer.label }}</label>
+        </span>
+    </div>
+
+    <div class="error" *ngIf="!isValid">
+        This field is required!
+    </div>
+</div>

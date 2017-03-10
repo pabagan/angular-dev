@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "src/app/modules/users"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "src/app"
+		}
+	]
+}
